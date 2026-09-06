@@ -32,3 +32,5 @@ uploads/
 # Secrets
 *.pem
 *.key
+
+.env
