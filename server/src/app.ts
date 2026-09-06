@@ -1,3 +1,4 @@
+import authRoutes from "./routes/authRoutes";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -28,6 +29,11 @@ const apiLimiter = rateLimit({
 });
 
 app.use("/api", apiLimiter);
+
+app.use(
+  "/api/auth",
+  authRoutes
+);
 
 app.get("/api/health", (_req, res) => {
   res.status(200).json({
